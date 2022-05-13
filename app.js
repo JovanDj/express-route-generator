@@ -17,8 +17,9 @@ let products = [
 const resources = [
   { name: "users", data: users },
   { name: "products", data: products },
-  { name: "companies" },
-  { name: "vendors" },
+  { name: "companies", data: [] },
+  { name: "vendors", data: [] },
+  { name: "tasks", data: [{ id: 1, name: "Do homework" }] },
 ];
 
 generate(app, resources);

@@ -21,7 +21,10 @@ module.exports = (app, resources) => {
     });
 
     app.post(`/${resource.name}`, (req, res) => {
-      const id = resource.data.sort((a, b) => b.id - a.id)[0].id + 1;
+      const id = resource.data.length
+        ? resource.data.sort((a, b) => b.id - a.id)[0].id + 1
+        : 1;
+
       resource.data.push({
         id,
         ...req.body,
